@@ -59,71 +59,86 @@
                 </RowDefinition>
             </Grid.RowDefinitions>
             
-            <!-- Creates a psudo-background for the navigation sidebar -->
+            <!-- Creates a psudo-background for the navigation sidebar and header -->
+            
+            <!-- Navigation Sidebar -->
             <Rectangle Grid.Column="0"
                        Grid.Row="0"
                        Grid.RowSpan="2"
                        Fill="#1b1b1b"
                        />
-      
+
+            <!-- Header -->
+            <Rectangle Grid.Column="0"
+                       Grid.Row="0"
+                       Grid.ColumnSpan="3"
+                       Fill="#1b1b1b"
+                       />
+
+
             <Image Source="/Images/TestImage2.png" /> <!-- Logo for the app-->
 
             
             
             <!-- Creates the navigation buttons on the navigation sidebar -->
             <StackPanel Grid.Row="1">
-                
+
                 <!-- Home/Dashboard Button-->
                 <RadioButton Content="Dashboard" 
-                             Foreground="White"
-                             FontSize="8"
-                             Height="50"
                              Style="{StaticResource DashboardSidebarButtonTheme}"/>
 
                 <!-- Wiki Button-->
                 <RadioButton Content="Wiki"
-                             Foreground="White"
-                             FontSize="8"
-                             Height="50"
                              Style="{StaticResource DashboardSidebarButtonTheme}"/>
 
                 <!-- Maps Button-->
                 <RadioButton Content="Maps"
-                             Foreground="White"
-                             FontSize="8"
-                             Height="50"
                              Style="{StaticResource DashboardSidebarButtonTheme}"/>
 
                 <!-- Timeline Button-->
                 <RadioButton Content="Timeline"
-                             Foreground="White"
-                             FontSize="8"
-                             Height="50"
                              Style="{StaticResource DashboardSidebarButtonTheme}"/>
 
                 <!-- Documentation Button-->
                 <RadioButton Content="Mythweaver"
-                             Foreground="White"
-                             FontSize="8"
-                             Height="50"
                              Style="{StaticResource DashboardSidebarButtonTheme}"/>
 
                 <!-- Character Button-->
                 <RadioButton Content="Characters"
-                             Foreground="White"
-                             FontSize="8"
-                             Height="50"
                              Style="{StaticResource DashboardSidebarButtonTheme}"/>
 
                 <!-- Images Button-->
                 <RadioButton Content="Images"
-                             Foreground="White"
-                             FontSize="8"
-                             Height="50"
                              Style="{StaticResource DashboardSidebarButtonTheme}"/>
 
             </StackPanel>
-            
+
+            <!-- Search Box -->
+            <TextBox 
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Grid.Column="1"
+                     Style="{StaticResource SearchBox}">
+
+            </TextBox>
+
+            <RadioButton Content="Add World" 
+                         Grid.Column="1" Grid.Row="1"
+                         VerticalAlignment="Top"
+                         
+                         
+                         Style="{StaticResource DashboardAddWorldButton}">
+
+            </RadioButton>
+
+            <TextBlock Text="MythWeaver" 
+                       Grid.Column="2"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="35"
+                       FontStyle="Oblique"/>
+
         </Grid>
         
     </Border>

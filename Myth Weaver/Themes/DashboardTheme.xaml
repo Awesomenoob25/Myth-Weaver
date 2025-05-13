@@ -13,11 +13,15 @@
                     <ControlTemplate TargetType="RadioButton">
                         <Grid VerticalAlignment="Stretch"
                               HorizontalAlignment="Stretch"
-                              Background="{TemplateBinding Background}">
+                              Background="{TemplateBinding Background}"
+                              Height="50"
+                              >
 
                             <TextBlock Text="{TemplateBinding Property=Content}"
                                        VerticalAlignment="Center"
-                                       Margin="3,0,0,0"/>
+                                       Margin="3,0,0,0"
+                                       FontSize="8"
+                                       Foreground="White"/>
 
                         </Grid>
                     </ControlTemplate>
@@ -39,8 +43,104 @@
         </Style.Triggers>
         
     </Style>
-    
-    
-    
-    
+
+    <Style TargetType="{x:Type TextBox}"
+           x:Key="SearchBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border CornerRadius="10"
+                            Background="Gray"
+                            Width="180" Height="40"
+                            Margin="10,0,0,0">
+                            
+
+                        <Grid>
+                            <Rectangle StrokeThickness="1"/>
+                            <TextBox Margin="1"
+                                     Text="{TemplateBinding Text}"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     VerticalContentAlignment="Center"
+                                     Padding="5"
+                                     Foreground="White"
+                                     x:Name="SearchBox"/>
+
+                            <TextBlock IsHitTestVisible="False"
+                                       Text="Search"
+                                       VerticalAlignment="Center"
+                                       Margin="10,0,0,0"
+                                       FontSize="11"
+                                       Foreground="DarkGray"
+                                       Grid.Column="1">
+
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=SearchBox}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                                
+                            </TextBlock>
+                        </Grid>
+
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Configures the theme for the Add World Button -->
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
+       TargetType="{x:Type RadioButton}"
+       x:Key="DashboardAddWorldButton">
+
+        <!-- Sets the appearance of the buttons-->
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid VerticalAlignment="Stretch"
+                          HorizontalAlignment="Stretch"
+                          Background="{TemplateBinding Background}"
+                          Height="20"
+                          Width="200"
+                          >
+
+                            <TextBlock Text="{TemplateBinding Property=Content}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Foreground="White"
+                                   FontSize="11"
+                                   
+                                   />
+
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Background" Value="DimGray"/>
+            <Setter Property="BorderThickness" Value="0"/>
+
+
+
+        </Style.Setters>
+
+        <!-- Changes to colour of the buttons when being hovered over, as to provide feedback to the user which button is selected -->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Black"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+
+
 </ResourceDictionary>
