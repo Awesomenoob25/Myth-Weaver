@@ -1,0 +1,131 @@
+﻿<Window x:Class="Myth_Weaver.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Myth_Weaver"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Title="" Height="600" Width="920">
+
+    <!-- Imports the shared style from DashboardTheme.xaml for consistant styling across the UI -->
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/DashboardTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <!-- Sets Background Colour -->
+    <Border Background="#323232">
+        
+        
+        <!-- 
+        Defines the layout of the page using grid.
+        
+        - Column 0 is for the logo and the sidebar to select the page for the application
+        - Column 1 is for a context or navigation window. Will have search, information
+            that is dynamic depending on what page the user is on, etc.
+        - Column 2 is for the main content of a given page
+        
+        - Row 0 is for the header if needed
+        - Row 1 is for the rest of the application
+        -->
+        <Grid>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50">
+                </ColumnDefinition>
+                
+                <ColumnDefinition Width="200">
+                </ColumnDefinition>
+                
+                <ColumnDefinition>
+                </ColumnDefinition>
+                
+            </Grid.ColumnDefinitions>
+
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50">
+                </RowDefinition>
+
+                <RowDefinition>
+                </RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <!-- Creates a psudo-background for the navigation sidebar -->
+            <Rectangle Grid.Column="0"
+                       Grid.Row="0"
+                       Grid.RowSpan="2"
+                       Fill="#1b1b1b"
+                       />
+      
+            <Image Source="/Images/TestImage2.png" /> <!-- Logo for the app-->
+
+            
+            
+            <!-- Creates the navigation buttons on the navigation sidebar -->
+            <StackPanel Grid.Row="1">
+                
+                <!-- Home/Dashboard Button-->
+                <RadioButton Content="Dashboard" 
+                             Foreground="White"
+                             FontSize="8"
+                             Height="50"
+                             Style="{StaticResource DashboardSidebarButtonTheme}"/>
+
+                <!-- Wiki Button-->
+                <RadioButton Content="Wiki"
+                             Foreground="White"
+                             FontSize="8"
+                             Height="50"
+                             Style="{StaticResource DashboardSidebarButtonTheme}"/>
+
+                <!-- Maps Button-->
+                <RadioButton Content="Maps"
+                             Foreground="White"
+                             FontSize="8"
+                             Height="50"
+                             Style="{StaticResource DashboardSidebarButtonTheme}"/>
+
+                <!-- Timeline Button-->
+                <RadioButton Content="Timeline"
+                             Foreground="White"
+                             FontSize="8"
+                             Height="50"
+                             Style="{StaticResource DashboardSidebarButtonTheme}"/>
+
+                <!-- Documentation Button-->
+                <RadioButton Content="Mythweaver"
+                             Foreground="White"
+                             FontSize="8"
+                             Height="50"
+                             Style="{StaticResource DashboardSidebarButtonTheme}"/>
+
+                <!-- Character Button-->
+                <RadioButton Content="Characters"
+                             Foreground="White"
+                             FontSize="8"
+                             Height="50"
+                             Style="{StaticResource DashboardSidebarButtonTheme}"/>
+
+                <!-- Images Button-->
+                <RadioButton Content="Images"
+                             Foreground="White"
+                             FontSize="8"
+                             Height="50"
+                             Style="{StaticResource DashboardSidebarButtonTheme}"/>
+
+            </StackPanel>
+            
+        </Grid>
+        
+    </Border>
+    
+</Window>
